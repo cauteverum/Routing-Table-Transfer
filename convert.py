@@ -1,5 +1,9 @@
 from netmiko import Netmiko
+"""
 
+    You can edit info_router and info_fortigate according to your needs. 
+
+"""
 info_router = {
     'device_type':'cisco_ios', 
     'ip':'192.168.11.140', 
@@ -27,6 +31,11 @@ with open(file="cisco_routes.txt", mode="w", encoding="utf-8") as file:
 table_ = []
 
 table = table.split("\n")[11:]
+"""
+
+I wrote 11: because static routes start on 11th line. If this changes according to device type which you use, you can edit it too. 
+
+"""
 c = 0
 while True: 
     try:
