@@ -23,7 +23,12 @@ print("Connected to cisco router..")
 connection_fortigate = Netmiko(**info_fortigate)
 print("Connected to fortigate..")
 
+"""
 
+    If you want to change command, delete 'show ip route static' and write any command you want to send to cisco router.
+    But you should change the command on line 72 too. 
+
+"""
 table = connection_router.send_command('show ip route static ')
 with open(file="cisco_routes.txt", mode="w", encoding="utf-8") as file: 
     file.write(table)
